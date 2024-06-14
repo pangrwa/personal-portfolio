@@ -28,7 +28,7 @@ export default function Navbar() {
       },
     },
   };
-  
+
   return (
     <nav className="w-full flex justify-center items-center px-3 py-2">
       <div
