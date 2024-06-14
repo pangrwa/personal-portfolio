@@ -1,3 +1,4 @@
+"use client"
 import {
   IconArrowWaveRightUp,
   IconBoxAlignRightFilled,
@@ -11,19 +12,25 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
 import { projectData } from "@/data";
+import { Reveal } from "./ui/Reveal";
+import { TechStack } from "./Experience";
+import TechStackButton from "./TechStackButton";
 
 export default function Project() {
   return (
     <div className="flex justify-center items-center mx-5 my-10">
       <div className="max-w-7xl w-full sm:w-[1200px]">
-        <h1 className="text-3xl font-extrabold" id="projects">Projects</h1>
+        <Reveal>
+          <h1 className="text-2xl sm:text-5xl font-extrabold" id="projects">Projects</h1>
+        </Reveal>
         <BentoGrid className=" gap-10 my-10">
           {projectData.map((item) => (
-            <CardContainer key={item.id} className="inter-var w-full h-full">
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-my-purple/[0.2]   rounded-xl border-2 w-full h-full p-4">
+            <Reveal key={item.id} >
+            <CardContainer  className="inter-var w-full h-full">
+              <CardBody className="bg-gray-50 relative group/card border-my-purple/[0.2]   rounded-xl border-2 w-full h-full p-4">
                 <CardItem
                   translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
+                  className="text-xl font-bold text-neutral-600"
                 >
                   {item.projectName}
                 </CardItem>
@@ -42,12 +49,19 @@ export default function Project() {
                 <CardItem
                   as="p"
                   translateZ="60"
-                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 h-16"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 h-16"
                 >
                   {item.projectDescription}
                 </CardItem>
 
-                <div className="pt-5 flex justify-end items-center ">
+                <div className="pt-5 flex justify-between items-center ">
+                  <div className="flex flex-wrap gap-1">
+                    {item.techStack.map((tech) => (
+                      <CardItem key={tech.id} translateZ="100">
+                        <TechStackButton tech={tech.point} />
+                      </CardItem>
+                    ))}
+                  </div>
                   <CardItem
                     translateZ={20}
                     as="button"
@@ -62,6 +76,7 @@ export default function Project() {
                 </div>
               </CardBody>
             </CardContainer>
+            </Reveal>
           ))}
         </BentoGrid>
       </div>

@@ -15,7 +15,11 @@ const config: Config = {
       },
       colors: {
         'my-purple': '#8C52FF'
+      },
+      screens: {
+        'xs': '400px'
       }
+
     },
   },
   plugins: [],

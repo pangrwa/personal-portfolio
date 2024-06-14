@@ -2,7 +2,7 @@ export const navBarItems = [
     { name: "Home", id: 1, link: "/"}, 
     { name: "Experiences", id: 2, link: "#experiences" },
     { name: "Projects", id: 3, link: "#projects"}, 
-    { name: "Contact", id: 4, link: "/" }
+    { name: "Contact", id: 4, link: "#contact" }
 ]
   
 export const jobDetailsData = [
@@ -62,6 +62,30 @@ export const jobDetailsData = [
         companyImage: "/companies/switcheo-labs-original.png",
         companyLink: "https://www.switcheo.com/"
     },
+    {
+        id: 3,
+        startDate: "Jan 2023",
+        endDate: "Nov 2023",
+        companyName: "NUS School of Computing",
+        jobTitle: "Teaching Assistant",
+        jobDescription: "Assisted in the teaching of CS1010S, CS1010A (Programming Methodology) and CS2103T (Software Engineering).",
+        techStack: [
+            {
+                point: "Python",
+                id: 1
+            },
+            {
+                point: "Java",
+                id: 2
+            },
+            {
+                point: "UML Diagrams",
+                id: 3
+            }
+        ],
+        companyImage: "/companies/nus-original.png",
+        companyLink: "https://www.comp.nus.edu.sg/"
+    } 
 
 ]
 

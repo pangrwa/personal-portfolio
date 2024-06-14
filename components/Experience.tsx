@@ -1,4 +1,8 @@
+"use client"
 import { jobDetailsData } from "@/data";
+import { Reveal } from "./ui/Reveal";
+import  React  from "react"
+import TechStackButton from "./TechStackButton";
 
 interface JobDetails {
     id: number, 
@@ -12,13 +16,14 @@ interface JobDetails {
     companyLink?: string
 }
 
-function TechStack( { techStack = [] } : { techStack : JobDetails["techStack"] } ) {
+
+export function TechStack( { techStack = [] } : { techStack : JobDetails["techStack"] } ) {
     return (
         <div className="flex gap-2 flex-wrap">
             {techStack.map((tech) => (
-                <div key={tech.id}
-                    className="rounded-full bg-white text-black px-3 py-1 text-xs font-light transition duration-500 hover:scale-110 cursor-pointer border-2 border-my-purple/[0.2]"
-                >{tech.point}</div>
+                <React.Fragment key={tech.id}>
+                    <TechStackButton tech={tech.point} />
+                </React.Fragment>
             ))}
         </div>
     )
@@ -34,7 +39,7 @@ function JobBox( { jobDetails } : { jobDetails : JobDetails }) {
     return (
         <div className={`${boxDesign}`}>
             <div className={headerStyles} >
-                <a href={companyLink}>
+                <a href={companyLink} target="_blank">
                     <img src={companyImage} className={imageStyles} />
                 </a>
                 <div className="text-xl font-bold">{companyName}</div>
@@ -57,14 +62,20 @@ export default function Experience() {
     return (
         <div className="flex justify-center items-center mx-5">
             <div className="max-w-7xl w-full sm:w-[1200px]">
-                <h1 className="text-3xl font-extrabold" id="experiences">Experience</h1>
+                <Reveal>
+                <h1 className="text-2xl sm:text-5xl font-extrabold" id="experiences">Experiences</h1>
+                </Reveal>
                 <div className="flex flex-col gap-4">
-                    <hr className={hrStyle} />
-                    {jobDetailsData.map((job) => (
-                      <>
-                        <JobBox jobDetails={job} key={job.id} />
+                    <Reveal>
                         <hr className={hrStyle} />
-                      </>
+                    </Reveal>
+                    {jobDetailsData.map((job) => (
+                      <Reveal key={job.id}>
+                        <div className="flex flex-col gap-4">
+                            <JobBox jobDetails={job} key={job.id} />
+                            <hr className={hrStyle} />
+                        </div>
+                      </Reveal>
                     ))}
                 </div>
             </div>

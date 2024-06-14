@@ -4,6 +4,9 @@ import About from "@/components/About";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
 import Project from "@/components/Project";
+import { Reveal } from "@/components/ui/Reveal";
+import { motion } from "framer-motion"; 
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -16,7 +19,7 @@ export default function Home() {
         <Experience/>
         <Project/>
       </div>
-      <div className="bg-black">hello</div>
+      <Contact />
     </div>
   );
 }
