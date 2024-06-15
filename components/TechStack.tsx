@@ -34,6 +34,7 @@ export default function TechStack() {
                         <img src="/tech-stack/express-original.svg" className={`${iconStyles}`} />
                         <img src="/tech-stack/angular-original.svg" className={`${iconStyles}`} />
                         <img src="/tech-stack/nodejs-original-wordmark.svg" className={`${iconStyles}`} />
+                        <img src="/tech-stack/rails-original-wordmark.svg" className={`${iconStyles}`} />
                         <img src="/tech-stack/spring-original.svg" className={`${iconStyles}`} />
                         <img src="/tech-stack/bootstrap-original.svg" className={`${iconStyles}`} />
                         <img src="/tech-stack/tailwindcss-original.svg" className={`${iconStyles}`} />
