@@ -91,6 +91,28 @@ export const jobDetailsData = [
 
 export const projectData = [
     {
+        id: 6,
+        projectName: "JSON Parser",
+        projectDescription: "A JSON Parser that parses inputs to check if it is a valid JSON and to format it.",
+        techStack: [
+            {
+                id: 1,
+                point: "Python"
+            }, 
+            {
+                id: 2,
+                point: "React"
+            },
+            {
+                id: 3,
+                point: "AWS" 
+            }
+        ],
+        projectImage: "/projects/jsonparser.png",
+        projectLink: "https://main.d1scyhyot6rdm4.amplifyapp.com/",
+        githubLink: "https://pangrwa.github.io/bob-the-builder/cc-fyi/json-parser/"
+    },
+    {
         id: 1, 
         projectName: "TinyTrace",
         projectDescription: "A URL shortener service.",
