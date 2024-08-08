@@ -108,7 +108,7 @@ export const projectData = [
                 point: "AWS" 
             }
         ],
-        projectImage: "/projects/jsonparser.png",
+        projectImage: "/projects/json-parser.png",
         projectLink: "https://main.d1scyhyot6rdm4.amplifyapp.com/",
         githubLink: "https://pangrwa.github.io/bob-the-builder/cc-fyi/json-parser/"
     },
